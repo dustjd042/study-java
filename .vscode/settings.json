@@ -1,9 +1,10 @@
 {
     "java.project.sourcePaths": [
+        "0719",
         "0718",
         "0715/java/Variable",
         "0714/java/Thread1",
         "0712",
-        "0719"
+        "0720"
     ]
 }
