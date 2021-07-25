@@ -5,17 +5,20 @@ public class baek {
         Scanner scan = new Scanner(System.in);
 
         int a = scan.nextInt();
+        int b = scan.nextInt();
+
+        int[] c = new int[a];
         
-        for (int i = 1; i <= a; i++){
+        for (int i = 0; i < a; i++){
 
-            for (int f = a; f > 0+i; f--){
-                System.out.printf(" ");
-            }
+            c[i] = scan.nextInt();
+        }
 
-            for (int j = 0; j < i; j++){
-                System.out.printf("*");
+        for (int i = 0; i < a; i++){
+
+            if (b > c[i]){
+                System.out.printf("%d ",  c[i]);
             }
-            System.out.printf("\n");
         }
     }
 }
