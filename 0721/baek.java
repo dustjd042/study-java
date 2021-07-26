@@ -3,21 +3,18 @@ import java.util.Scanner;
 public class baek {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-
-        int[] c = new int[a];
         
-        for (int i = 0; i < a; i++){
+        int a = 0;
+        int b = 0;
 
-            c[i] = scan.nextInt();
-        }
+        while(true){
+            a = scan.nextInt();
+            b = scan.nextInt();
 
-        for (int i = 0; i < a; i++){
-
-            if (b > c[i]){
-                System.out.printf("%d ",  c[i]);
+            if(a == 0 && b == 0){
+                break;
+            }else{
+                System.out.println(a + b);
             }
         }
     }
