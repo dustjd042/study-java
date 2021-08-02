@@ -1,39 +1,33 @@
-import java.util.Arrays;
 import java.util.Scanner;
-import java.util.zip.ZipEntry;
 
 public class baek {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
 
-        int[] a = new int[9];
-        int[] b = new int[9];
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        int c = scan.nextInt();
 
-        for(int i = 0; i < 9; i++){
-            int q = scan.nextInt();
-            a[i] = q;
-            b[i] = q;
-        }
+        String d = Integer.toString(a*b*c);
 
-        //b = a;
-        Arrays.sort(b);
-    
-        int z = 0;
-        while(true){
-            // System.out.printf("========= \n", z);
-            // System.out.printf("%d \n", z);
-            if(b[8] == a[z]){
-                // System.out.printf("========= \n", z);
-                // System.out.printf("%d \n", b[8]);
-                // System.out.printf("========= \n", z);
-                // System.out.printf("%d \n", z);
-                // System.out.printf("========= \n", z);
-                break;
+        // System.out.println(d);
+        // System.out.println(d.length());
+        // System.out.println(d.charAt(0));
+
+        int[] e = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+        for (int i = 0 ; d.length() > i; i++) {
+            for (int j = 0 ; 10 > j; j++) {
+                if ( d.charAt(i) == (char)(j + '0')){
+                    e[j] += 1;
+                }
             }
-            z++;
         }
 
-        System.out.printf("%d\n%d",  b[8], z+1);
+        for (int k = 0 ; 10 > k; k++) {
+            //System.out.println(k);
+            System.out.println(e[k]);
+        }
     }
 }
