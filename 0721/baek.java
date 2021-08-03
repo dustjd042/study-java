@@ -1,33 +1,36 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import javax.print.event.PrintEvent;
+import javax.security.auth.kerberos.KerberosKey;
 
 public class baek {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
 
-        int a = scan.nextInt();
-        int b = scan.nextInt();
-        int c = scan.nextInt();
+        int[] a = new int[10];
+        int[] b = new int[10];
+        List<Integer> c = new ArrayList<Integer>();
 
-        String d = Integer.toString(a*b*c);
 
-        // System.out.println(d);
-        // System.out.println(d.length());
-        // System.out.println(d.charAt(0));
+        for (int i = 0 ; 10 > i; i++) {
+            a[i] = scan.nextInt();
+            b[i] = a[i]%42;
+        }
 
-        int[] e = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-
-        for (int i = 0 ; d.length() > i; i++) {
-            for (int j = 0 ; 10 > j; j++) {
-                if ( d.charAt(i) == (char)(j + '0')){
-                    e[j] += 1;
+        for (int j = 0 ; a.length > j; j++) {
+            for (int k = j ; b.length > k; k++) {
+                if(j != k){
+                    if(b[j] == b[k]){
+                        c.add(b[j]);
+                    }
                 }
             }
         }
 
-        for (int k = 0 ; 10 > k; k++) {
-            //System.out.println(k);
-            System.out.println(e[k]);
-        }
+        System.out.print(c);
+
     }
 }
